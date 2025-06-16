@@ -15,11 +15,16 @@
   "packageRules": [
     {
       "description": "Astro and React ecosystem packages",
-      "matchPackagePatterns": ["^@astrojs/", "^astro", "^react", "^@types/react"],
       "groupName": "Astro and React core",
       "schedule": ["before 9am on Monday"],
       "automerge": false,
-      "reviewersFromCodeOwners": true
+      "reviewersFromCodeOwners": true,
+      "matchPackageNames": [
+        "/^@astrojs//",
+        "/^astro/",
+        "/^react/",
+        "/^@types/react/"
+      ]
     },
     {
       "description": "Development dependencies",
@@ -32,26 +37,31 @@
     },
     {
       "description": "Testing packages",
-      "matchPackagePatterns": [
-        "^@testing-library/",
-        "^@playwright/",
-        "^vitest",
-        "^@vitest/",
-        "^jsdom"
-      ],
       "groupName": "Testing packages",
       "schedule": ["before 9am on Monday"],
       "automerge": false,
-      "automergeType": "pr"
+      "automergeType": "pr",
+      "matchPackageNames": [
+        "/^@testing-library//",
+        "/^@playwright//",
+        "/^vitest/",
+        "/^@vitest//",
+        "/^jsdom/"
+      ]
     },
     {
       "description": "ESLint and TypeScript packages",
-      "matchPackagePatterns": ["^@typescript-eslint/", "^eslint", "^typescript", "^@types/"],
-      "excludePackagePatterns": ["^@types/react"],
       "groupName": "TypeScript and ESLint",
       "schedule": ["before 9am on Monday"],
       "automerge": false,
-      "automergeType": "pr"
+      "automergeType": "pr",
+      "matchPackageNames": [
+        "/^@typescript-eslint//",
+        "/^eslint/",
+        "/^typescript/",
+        "/^@types//",
+        "!/^@types/react/"
+      ]
     },
     {
       "description": "Formatting and code quality tools",
@@ -69,27 +79,33 @@
     },
     {
       "description": "TailwindCSS ecosystem",
-      "matchPackagePatterns": ["^tailwind", "^@tailwindcss/"],
-      "matchPackageNames": ["autoprefixer", "postcss", "clsx", "tailwind-merge"],
+      "matchPackageNames": [
+        "autoprefixer",
+        "postcss",
+        "clsx",
+        "tailwind-merge",
+        "/^tailwind/",
+        "/^@tailwindcss//"
+      ],
       "groupName": "TailwindCSS ecosystem",
       "schedule": ["before 9am on Monday"],
       "automerge": false
     },
     {
       "description": "FontAwesome packages",
-      "matchPackagePatterns": ["^@fortawesome/"],
       "groupName": "FontAwesome packages",
       "schedule": ["before 9am on Monday"],
       "automerge": false,
-      "automergeType": "pr"
+      "automergeType": "pr",
+      "matchPackageNames": ["/^@fortawesome//"]
     },
     {
       "description": "Lucide icon packages",
-      "matchPackagePatterns": ["^lucide-"],
       "groupName": "Lucide icons",
       "schedule": ["before 9am on Monday"],
       "automerge": false,
-      "automergeType": "pr"
+      "automergeType": "pr",
+      "matchPackageNames": ["/^lucide-/"]
     },
     {
       "description": "Major updates require manual review",
